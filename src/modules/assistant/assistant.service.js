@@ -2,8 +2,8 @@ const axios = require('axios');
 
 class AssistantService {
   constructor() {
-    this.llmEndpoint = process.env.LLM_ENDPOINT || 'http://localhost:8000/assistant';
-    this.timeout = 20000; // 5 seconds
+    this.llmEndpoint = process.env.LLM_ENDPOINT || 'https://c9782d99f14b.ngrok-free.app/chat';
+    this.timeout = 20000; // 20 seconds (Colab needs 4-6s)
     this.maxFunctionCalls = 2;
   }
 
@@ -119,7 +119,10 @@ class AssistantService {
 
     // Product search
     const productKeywords = ['search', 'find', 'looking for', 'do you have', 'show me', 'product', 'buy'];
-    if (productKeywords.some(kw => textLower.includes(kw))) {
+    const productNames = ['headphones', 'laptop', 'phone', 'tablet', 'camera', 'watch', 'speaker', 'keyboard', 'mouse', 'monitor', 'tv', 'game', 'book', 'clothes', 'shoes', 'shirt', 'pants', 'dress', 'jacket', 'bag', 'backpack', 'charger', 'cable', 'case', 'cover'];
+    
+    if (productKeywords.some(kw => textLower.includes(kw)) || 
+        productNames.some(product => textLower.includes(product))) {
       return 'product_search';
     }
 
