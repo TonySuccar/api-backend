@@ -3,7 +3,7 @@ const axios = require('axios');
 class AssistantService {
   constructor() {
     this.llmEndpoint = process.env.LLM_ENDPOINT || 'http://localhost:8000/assistant';
-    this.timeout = 5000; // 5 seconds
+    this.timeout = 20000; // 5 seconds
     this.maxFunctionCalls = 2;
   }
 
