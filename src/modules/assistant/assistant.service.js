@@ -166,14 +166,14 @@ class AssistantService {
    * Handle violation fast response
    */
   handleViolation() {
-    return "I'm here to help with Shoplite questions about orders, returns, shipping, and policies. Please ask a relevant question and I'll be happy to assist.";
+    return "I’m here to help, not upset you — sounds like you’re frustrated. If you have any questions about your orders, returns, or our policies, I’d be happy to assist.";
   }
 
   /**
    * Handle off-topic fast response
    */
   handleOffTopic() {
-    return "I specialize in Shoplite support - orders, returns, shipping, payments, and account questions. How can I help you with your Shoplite experience?";
+    return "I'm here to help with Shoplite questions about orders, returns, shipping, and policies. Please ask a relevant question and I'll be happy to assist.";
   }
 
   /**
